@@ -33,6 +33,7 @@ env:
 	rustup component add rust-src
 	rustup component add llvm-tools-preview
 
+# 这里使用--strip-all去除binary中的元数据
 $(KERNEL_BIN): kernel
 	@$(OBJCOPY) $(KERNEL_ELF) --strip-all -O binary $@
 

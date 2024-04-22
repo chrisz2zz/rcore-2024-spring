@@ -1,5 +1,5 @@
     .section .text.entry
-    .globl _start
+    .globl _start  // 设置入口
 _start:
     la sp, boot_stack_top
     call rust_main
