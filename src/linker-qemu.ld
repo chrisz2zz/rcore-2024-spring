@@ -1,15 +1,15 @@
-OUTPUT_ARCH(riscv)
-ENTRY(_start)
-BASE_ADDRESS = 0X80200000;
+OUTPUT_ARCH(riscv)  /* 设置目标平台 */
+ENTRY(_start)       /* 设置入口 */
+BASE_ADDRESS = 0X80200000;  /* 定义常量 */
 
 SECTIONS
 {
-    . = BASE_ADDRESS;
+    . = BASE_ADDRESS;  /*调整接下来的段放在哪里*/
     skernel = .;
 
     stext = .;
     .text : {
-        *(.text.entry)
+        *(.text.entry)   /* 表明entry在代码段的最前面(最低位) */
         *(.text .text.*)
     }
 
